@@ -29,8 +29,8 @@ def get_root(path):
     path = pathlib.Path(path)
     try:
         tree = etree.parse(path.as_posix())
-    except Exception as error_loading:
-        raise (f"Error loading file {path.as_posix()}.") from error_loading
+    except:
+        raise Exception(f"Error loading file {path.as_posix()}.")
     root = tree.getroot()
     return root
 
